@@ -7,7 +7,7 @@ export function CollectionCta({
   caption,
 }: {
   lines: string[];
-  to: string;
+  to: "/sneakers" | "/lancamentos" | "/colecoes";
   caption?: string;
 }) {
   return (
