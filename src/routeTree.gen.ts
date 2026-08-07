@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ColecoesRouteImport } from './routes/colecoes'
+import { Route as LancamentosRouteImport } from './routes/lancamentos'
+import { Route as SneakersRouteImport } from './routes/sneakers'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ColecoesRoute = ColecoesRouteImport.update({
+  id: '/colecoes',
+  path: '/colecoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LancamentosRoute = LancamentosRouteImport.update({
+  id: '/lancamentos',
+  path: '/lancamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SneakersRoute = SneakersRouteImport.update({
+  id: '/sneakers',
+  path: '/sneakers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/colecoes': typeof ColecoesRoute
+  '/lancamentos': typeof LancamentosRoute
+  '/sneakers': typeof SneakersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/colecoes': typeof ColecoesRoute
+  '/lancamentos': typeof LancamentosRoute
+  '/sneakers': typeof SneakersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/colecoes': typeof ColecoesRoute
+  '/lancamentos': typeof LancamentosRoute
+  '/sneakers': typeof SneakersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/colecoes' | '/lancamentos' | '/sneakers'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/colecoes' | '/lancamentos' | '/sneakers'
+  id: '__root__' | '/' | '/colecoes' | '/lancamentos' | '/sneakers'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ColecoesRoute: typeof ColecoesRoute
+  LancamentosRoute: typeof LancamentosRoute
+  SneakersRoute: typeof SneakersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +78,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/colecoes': {
+      id: '/colecoes'
+      path: '/colecoes'
+      fullPath: '/colecoes'
+      preLoaderRoute: typeof ColecoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lancamentos': {
+      id: '/lancamentos'
+      path: '/lancamentos'
+      fullPath: '/lancamentos'
+      preLoaderRoute: typeof LancamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sneakers': {
+      id: '/sneakers'
+      path: '/sneakers'
+      fullPath: '/sneakers'
+      preLoaderRoute: typeof SneakersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ColecoesRoute: ColecoesRoute,
+  LancamentosRoute: LancamentosRoute,
+  SneakersRoute: SneakersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
