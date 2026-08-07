@@ -67,7 +67,7 @@ function ProdutoPage() {
           <div className="mt-12">
             <span className="eyebrow">Numeração</span>
             <div className="mt-5 flex flex-wrap gap-3">
-              {product.sizes.map((s) => (
+              {product.sizes.map((s: number) => (
                 <button
                   key={s}
                   type="button"

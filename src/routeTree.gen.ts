@@ -10,13 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CadastroRouteImport } from './routes/cadastro'
+import { Route as CarrinhoRouteImport } from './routes/carrinho'
 import { Route as ColecoesRouteImport } from './routes/colecoes'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as LancamentosRouteImport } from './routes/lancamentos'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as SneakersRouteImport } from './routes/sneakers'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as ProdutoSlugRouteImport } from './routes/produto.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CadastroRoute = CadastroRouteImport.update({
+  id: '/cadastro',
+  path: '/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarrinhoRoute = CarrinhoRouteImport.update({
+  id: '/carrinho',
+  path: '/carrinho',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ColecoesRoute = ColecoesRouteImport.update({
@@ -24,9 +41,24 @@ const ColecoesRoute = ColecoesRouteImport.update({
   path: '/colecoes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LancamentosRoute = LancamentosRouteImport.update({
   id: '/lancamentos',
   path: '/lancamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SneakersRoute = SneakersRouteImport.update({
@@ -34,39 +66,111 @@ const SneakersRoute = SneakersRouteImport.update({
   path: '/sneakers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProdutoSlugRoute = ProdutoSlugRouteImport.update({
+  id: '/produto/$slug',
+  path: '/produto/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
+  '/carrinho': typeof CarrinhoRoute
   '/colecoes': typeof ColecoesRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
   '/lancamentos': typeof LancamentosRoute
+  '/login': typeof LoginRoute
   '/sneakers': typeof SneakersRoute
+  '/sobre': typeof SobreRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
+  '/carrinho': typeof CarrinhoRoute
   '/colecoes': typeof ColecoesRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
   '/lancamentos': typeof LancamentosRoute
+  '/login': typeof LoginRoute
   '/sneakers': typeof SneakersRoute
+  '/sobre': typeof SobreRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cadastro': typeof CadastroRoute
+  '/carrinho': typeof CarrinhoRoute
   '/colecoes': typeof ColecoesRoute
+  '/contato': typeof ContatoRoute
+  '/favoritos': typeof FavoritosRoute
   '/lancamentos': typeof LancamentosRoute
+  '/login': typeof LoginRoute
   '/sneakers': typeof SneakersRoute
+  '/sobre': typeof SobreRoute
+  '/produto/$slug': typeof ProdutoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/colecoes' | '/lancamentos' | '/sneakers'
+  fullPaths:
+    | '/'
+    | '/cadastro'
+    | '/carrinho'
+    | '/colecoes'
+    | '/contato'
+    | '/favoritos'
+    | '/lancamentos'
+    | '/login'
+    | '/sneakers'
+    | '/sobre'
+    | '/produto/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/colecoes' | '/lancamentos' | '/sneakers'
-  id: '__root__' | '/' | '/colecoes' | '/lancamentos' | '/sneakers'
+  to:
+    | '/'
+    | '/cadastro'
+    | '/carrinho'
+    | '/colecoes'
+    | '/contato'
+    | '/favoritos'
+    | '/lancamentos'
+    | '/login'
+    | '/sneakers'
+    | '/sobre'
+    | '/produto/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/cadastro'
+    | '/carrinho'
+    | '/colecoes'
+    | '/contato'
+    | '/favoritos'
+    | '/lancamentos'
+    | '/login'
+    | '/sneakers'
+    | '/sobre'
+    | '/produto/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CadastroRoute: typeof CadastroRoute
+  CarrinhoRoute: typeof CarrinhoRoute
   ColecoesRoute: typeof ColecoesRoute
+  ContatoRoute: typeof ContatoRoute
+  FavoritosRoute: typeof FavoritosRoute
   LancamentosRoute: typeof LancamentosRoute
+  LoginRoute: typeof LoginRoute
   SneakersRoute: typeof SneakersRoute
+  SobreRoute: typeof SobreRoute
+  ProdutoSlugRoute: typeof ProdutoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,11 +182,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cadastro': {
+      id: '/cadastro'
+      path: '/cadastro'
+      fullPath: '/cadastro'
+      preLoaderRoute: typeof CadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carrinho': {
+      id: '/carrinho'
+      path: '/carrinho'
+      fullPath: '/carrinho'
+      preLoaderRoute: typeof CarrinhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/colecoes': {
       id: '/colecoes'
       path: '/colecoes'
       fullPath: '/colecoes'
       preLoaderRoute: typeof ColecoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lancamentos': {
@@ -92,6 +224,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LancamentosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sneakers': {
       id: '/sneakers'
       path: '/sneakers'
@@ -99,14 +238,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SneakersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/produto/$slug': {
+      id: '/produto/$slug'
+      path: '/produto/$slug'
+      fullPath: '/produto/$slug'
+      preLoaderRoute: typeof ProdutoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CadastroRoute: CadastroRoute,
+  CarrinhoRoute: CarrinhoRoute,
   ColecoesRoute: ColecoesRoute,
+  ContatoRoute: ContatoRoute,
+  FavoritosRoute: FavoritosRoute,
   LancamentosRoute: LancamentosRoute,
+  LoginRoute: LoginRoute,
   SneakersRoute: SneakersRoute,
+  SobreRoute: SobreRoute,
+  ProdutoSlugRoute: ProdutoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
