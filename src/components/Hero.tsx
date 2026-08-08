@@ -6,21 +6,17 @@ import { Placeholder } from "./Placeholder";
 const slides = [
   {
     eyebrow: "Coleção 2026",
-    title: ["Precisão", "em cada", "passo"],
-    subtitle:
-      "Uma seleção reduzida de sneakers construídos com materiais nobres e engenharia de performance.",
+    title: ["Pise", "diferente"],
     cta: "Ver Sneakers",
   },
   {
     eyebrow: "Edição limitada",
-    title: ["Feito", "para", "poucos"],
-    subtitle: "Peças numeradas, produzidas em pequenas séries e disponíveis enquanto durarem.",
+    title: ["Domine", "o estilo"],
     cta: "Ver Lançamentos",
   },
   {
     eyebrow: "Performance",
-    title: ["Silêncio", "e", "velocidade"],
-    subtitle: "Tecnologia de amortecimento progressivo com estética urbana minimalista.",
+    title: ["Vá", "além"],
     cta: "Ver Coleções",
   },
 ];
