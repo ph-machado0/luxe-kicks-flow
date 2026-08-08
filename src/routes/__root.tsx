@@ -79,12 +79,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SNKRS — Sneakers de alto padrão" },
+      { title: "The Best Kicks — Sneakers de alto padrão" },
       {
         name: "description",
         content: "Curadoria premium de tênis. Poucas peças, escolhidas com precisão.",
       },
-      { property: "og:title", content: "SNKRS — Sneakers de alto padrão" },
+      { property: "og:title", content: "The Best Kicks — Sneakers de alto padrão" },
       {
         property: "og:description",
         content: "Curadoria premium de tênis. Poucas peças, escolhidas com precisão.",
@@ -103,9 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&family=Manrope:wght@300;400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
