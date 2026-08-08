@@ -47,7 +47,7 @@ export function Hero() {
           </h1>
           <Link
             to={links[index]!}
-            className="soft mt-12 inline-flex items-center gap-3 bg-primary px-9 py-4 font-display text-[0.6875rem] tracking-[0.28em] text-primary-foreground uppercase hover:opacity-90"
+            className="soft mt-10 inline-flex items-center gap-3 bg-primary px-9 py-4 font-display text-[0.6875rem] tracking-[0.28em] text-primary-foreground uppercase hover:opacity-90"
           >
             {slide.cta}
             <ArrowRight className="h-4 w-4" strokeWidth={2} />
