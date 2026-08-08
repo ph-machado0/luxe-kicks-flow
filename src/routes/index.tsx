@@ -105,7 +105,7 @@ function Index() {
                 src={essenceSneaker.url}
                 alt="Tênis Nike Dunk em destaque sobre fundo laranja"
                 className="w-full object-cover transition-transform duration-700 hover:scale-105"
-                style={{ aspectRatio: "3 / 4" }}
+                style={{ aspectRatio: "16 / 10" }}
               />
             </div>
           </Reveal>
