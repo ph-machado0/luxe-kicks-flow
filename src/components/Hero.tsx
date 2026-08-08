@@ -1,23 +1,31 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Placeholder } from "./Placeholder";
+import hero1 from "@/assets/hero-1.png.asset.json";
+import hero2 from "@/assets/hero-2.png.asset.json";
+import hero3 from "@/assets/hero-3.png.asset.json";
 
 const slides = [
   {
     eyebrow: "Coleção 2026",
     title: ["Pise", "diferente"],
     cta: "Ver Sneakers",
+    image: hero1.url,
+    alt: "Sneakers coloridos em veludo cotelê suspensos no ar",
   },
   {
     eyebrow: "Edição limitada",
     title: ["Domine", "o estilo"],
     cta: "Ver Lançamentos",
+    image: hero2.url,
+    alt: "Sneakers brancos e pretos clássicos sobre fundo claro",
   },
   {
     eyebrow: "Performance",
     title: ["Vá", "além"],
     cta: "Ver Coleções",
+    image: hero3.url,
+    alt: "Sneaker verde e off-white em fundo escuro",
   },
 ];
 
@@ -55,12 +63,18 @@ export function Hero() {
         </div>
 
         <div>
-          <Placeholder
+          <div
             key={`ph-${index}`}
-            label={`Banner ${index + 1}`}
-            ratio="4 / 5"
-            className="animate-fade-in w-full"
-          />
+            className="animate-fade-in ph w-full overflow-hidden"
+            style={{ aspectRatio: "4 / 5" }}
+          >
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
 
           <div className="mt-8 flex items-center justify-between">
             <div className="flex items-center gap-3">
