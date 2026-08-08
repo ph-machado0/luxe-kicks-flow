@@ -1,23 +1,31 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Placeholder } from "./Placeholder";
+import hero1 from "@/assets/hero-1.png.asset.json";
+import hero2 from "@/assets/hero-2.png.asset.json";
+import hero3 from "@/assets/hero-3.png.asset.json";
 
 const slides = [
   {
     eyebrow: "Coleção 2026",
     title: ["Pise", "diferente"],
     cta: "Ver Sneakers",
+    image: hero1.url,
+    alt: "Sneakers coloridos em veludo cotelê suspensos no ar",
   },
   {
     eyebrow: "Edição limitada",
     title: ["Domine", "o estilo"],
     cta: "Ver Lançamentos",
+    image: hero2.url,
+    alt: "Sneakers brancos e pretos clássicos sobre fundo claro",
   },
   {
     eyebrow: "Performance",
     title: ["Vá", "além"],
     cta: "Ver Coleções",
+    image: hero3.url,
+    alt: "Sneaker verde e off-white em fundo escuro",
   },
 ];
 
