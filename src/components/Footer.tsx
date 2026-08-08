@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/lib/shop";
+import logoAsset from "@/assets/logo.png.asset.json";
+
 
 export function Footer() {
   return (
