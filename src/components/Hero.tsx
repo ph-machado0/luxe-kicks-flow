@@ -38,7 +38,7 @@ export function Hero() {
       <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
         <div key={index} className="animate-slide-up max-w-xl">
           <span className="eyebrow">{slide.eyebrow}</span>
-          <h1 className="display-xl mt-8 text-[clamp(3.25rem,8.5vw,7rem)]">
+          <h1 className="display-xl mt-6 text-[clamp(3.25rem,8.5vw,7rem)]">
             {slide.title.map((line) => (
               <span key={line} className="block">
                 {line}
