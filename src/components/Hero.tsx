@@ -6,21 +6,17 @@ import { Placeholder } from "./Placeholder";
 const slides = [
   {
     eyebrow: "Coleção 2026",
-    title: ["Precisão", "em cada", "passo"],
-    subtitle:
-      "Uma seleção reduzida de sneakers construídos com materiais nobres e engenharia de performance.",
+    title: ["Pise", "diferente"],
     cta: "Ver Sneakers",
   },
   {
     eyebrow: "Edição limitada",
-    title: ["Feito", "para", "poucos"],
-    subtitle: "Peças numeradas, produzidas em pequenas séries e disponíveis enquanto durarem.",
+    title: ["Domine", "o estilo"],
     cta: "Ver Lançamentos",
   },
   {
     eyebrow: "Performance",
-    title: ["Silêncio", "e", "velocidade"],
-    subtitle: "Tecnologia de amortecimento progressivo com estética urbana minimalista.",
+    title: ["Vá", "além"],
     cta: "Ver Coleções",
   },
 ];
@@ -42,19 +38,16 @@ export function Hero() {
       <div className="container-x grid items-center gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
         <div key={index} className="animate-slide-up max-w-xl">
           <span className="eyebrow">{slide.eyebrow}</span>
-          <h1 className="display-xl mt-8 text-[clamp(3.25rem,8.5vw,7rem)]">
+          <h1 className="display-xl mt-6 text-[clamp(3.25rem,8.5vw,7rem)]">
             {slide.title.map((line) => (
               <span key={line} className="block">
                 {line}
               </span>
             ))}
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-            {slide.subtitle}
-          </p>
           <Link
             to={links[index]!}
-            className="soft mt-12 inline-flex items-center gap-3 bg-primary px-9 py-4 font-display text-[0.6875rem] tracking-[0.28em] text-primary-foreground uppercase hover:opacity-90"
+            className="soft mt-10 inline-flex items-center gap-3 bg-primary px-9 py-4 font-display text-[0.6875rem] tracking-[0.28em] text-primary-foreground uppercase hover:opacity-90"
           >
             {slide.cta}
             <ArrowRight className="h-4 w-4" strokeWidth={2} />
