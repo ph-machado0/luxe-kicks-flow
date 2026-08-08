@@ -1,19 +1,29 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/lib/shop";
+import logoAsset from "@/assets/logo.png.asset.json";
+
 
 export function Footer() {
   return (
     <footer className="border-t border-border">
       <div className="container-x grid gap-14 py-20 md:grid-cols-2 lg:grid-cols-4 lg:py-28">
         <div>
-          <span className="font-display text-lg font-extrabold tracking-[0.32em] uppercase">
-            SNKRS
-          </span>
+          <Link to="/" className="soft inline-flex items-center gap-2.5">
+            <img
+              src={logoAsset.url}
+              alt="The Best Kicks"
+              className="h-7 w-auto object-contain"
+            />
+            <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase">
+              The Best Kicks
+            </span>
+          </Link>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Curadoria de tênis de alto padrão. Poucas peças, escolhidas com precisão.
           </p>
         </div>
+
 
         <div>
           <h4 className="eyebrow">Institucional</h4>
@@ -105,8 +115,9 @@ export function Footer() {
       </div>
 
       <div className="container-x flex flex-col gap-3 border-t border-border py-8 text-[0.6875rem] tracking-[0.2em] text-muted-foreground/70 uppercase sm:flex-row sm:items-center sm:justify-between">
-        <span>© {new Date().getFullYear()} SNKRS</span>
+        <span>© {new Date().getFullYear()} The Best Kicks</span>
         <span>Feito com precisão</span>
+
       </div>
     </footer>
   );
