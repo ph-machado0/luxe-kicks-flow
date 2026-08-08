@@ -45,9 +45,6 @@ export function Hero() {
               </span>
             ))}
           </h1>
-          <p className="mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-            {slide.subtitle}
-          </p>
           <Link
             to={links[index]!}
             className="soft mt-12 inline-flex items-center gap-3 bg-primary px-9 py-4 font-display text-[0.6875rem] tracking-[0.28em] text-primary-foreground uppercase hover:opacity-90"
