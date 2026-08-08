@@ -115,8 +115,9 @@ export function Footer() {
       </div>
 
       <div className="container-x flex flex-col gap-3 border-t border-border py-8 text-[0.6875rem] tracking-[0.2em] text-muted-foreground/70 uppercase sm:flex-row sm:items-center sm:justify-between">
-        <span>© {new Date().getFullYear()} SNKRS</span>
+        <span>© {new Date().getFullYear()} The Best Kicks</span>
         <span>Feito com precisão</span>
+
       </div>
     </footer>
   );
