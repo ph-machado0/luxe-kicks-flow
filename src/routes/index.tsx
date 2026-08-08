@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { CollectionCta } from "@/components/CollectionCta";
 import { Reveal } from "@/components/Reveal";
 import { bestSellers, categories, newArrivals } from "@/lib/shop";
+import essenceSneaker from "@/assets/essence-sneaker.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,7 +100,14 @@ function Index() {
             </Link>
           </Reveal>
           <Reveal delay={120}>
-            <Placeholder label="Editorial" ratio="16 / 10" className="w-full" />
+            <div className="soft overflow-hidden">
+              <img
+                src={essenceSneaker.url}
+                alt="Tênis Nike Dunk em destaque sobre fundo laranja"
+                className="w-full object-cover transition-transform duration-700 hover:scale-105"
+                style={{ aspectRatio: "3 / 4" }}
+              />
+            </div>
           </Reveal>
         </div>
       </section>
