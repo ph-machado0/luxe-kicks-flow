@@ -9,13 +9,21 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="container-x grid gap-14 py-20 md:grid-cols-2 lg:grid-cols-4 lg:py-28">
         <div>
-          <span className="font-display text-lg font-extrabold tracking-[0.32em] uppercase">
-            SNKRS
-          </span>
+          <Link to="/" className="soft inline-flex items-center gap-2.5">
+            <img
+              src={logoAsset.url}
+              alt="The Best Kicks"
+              className="h-7 w-auto object-contain"
+            />
+            <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase">
+              The Best Kicks
+            </span>
+          </Link>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Curadoria de tênis de alto padrão. Poucas peças, escolhidas com precisão.
           </p>
         </div>
+
 
         <div>
           <h4 className="eyebrow">Institucional</h4>
