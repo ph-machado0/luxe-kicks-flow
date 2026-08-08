@@ -33,9 +33,17 @@ export function Header() {
       }`}
     >
       <div className="container-x grid h-20 grid-cols-[auto_1fr_auto] items-center gap-6">
-        <Link to="/" className="font-display text-lg font-extrabold tracking-[0.32em] uppercase">
-          SNKRS
+        <Link to="/" className="soft flex items-center gap-2.5">
+          <img
+            src={logoAsset.url}
+            alt="The Best Kicks"
+            className="h-9 w-auto object-contain"
+          />
+          <span className="font-display text-base font-extrabold tracking-[0.18em] uppercase sm:text-lg sm:tracking-[0.22em]">
+            The Best Kicks
+          </span>
         </Link>
+
 
         <nav className="hidden justify-center gap-9 lg:flex">
           {nav.map((item) => (
