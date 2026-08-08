@@ -63,12 +63,18 @@ export function Hero() {
         </div>
 
         <div>
-          <Placeholder
+          <div
             key={`ph-${index}`}
-            label={`Banner ${index + 1}`}
-            ratio="4 / 5"
-            className="animate-fade-in w-full"
-          />
+            className="animate-fade-in ph w-full overflow-hidden"
+            style={{ aspectRatio: "4 / 5" }}
+          >
+            <img
+              src={slide.image}
+              alt={slide.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              className="h-full w-full object-cover object-center"
+            />
+          </div>
 
           <div className="mt-8 flex items-center justify-between">
             <div className="flex items-center gap-3">
